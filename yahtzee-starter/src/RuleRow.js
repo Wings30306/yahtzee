@@ -3,10 +3,11 @@ import './RuleRow.css'
 
 class RuleRow extends Component {
   render() {
+    const { score, name, doScore, description } = this.props
     return (
-      <tr className="RuleRow RuleRow-active" onClick={this.props.doScore}>
-        <td className="RuleRow-name">{this.props.name}</td>
-        <td className="RuleRow-score">{this.props.score}</td>
+      <tr className={`RuleRow ${this.props.score === undefined ?"RuleRow-active" : "RuleRow-disabled"}`} onClick={score === undefined ? doScore : null }>
+        <td className="RuleRow-name">{name}</td>
+        <td className="RuleRow-score">{score === undefined ? description : score}</td>
       </tr>
     )
   }

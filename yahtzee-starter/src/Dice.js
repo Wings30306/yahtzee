@@ -3,6 +3,7 @@ import Die from './Die';
 import './Dice.css';
 
 class Dice extends Component {
+
   render() {
     return <div className="Dice">
       {this.props.dice.map((d, idx) =>
@@ -10,7 +11,8 @@ class Dice extends Component {
           val={d}
           locked={this.props.locked[idx]}
           idx={idx}
-          key={idx} />
+          key={idx}
+          rolling={this.props.rolling} />
       )}
     </div>
   }
